@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="carniceria_proveedores_action" name="proveedores"
+                     res_model="carniceria.proveedores" />
+        <menuitem id="carniceria_proveedores_menu"
+                  name="Proveedores"
+                  action="carniceria_proveedores_action"
+                  parent="menu_inicio"
+                  sequence="25" />
+
+        <record id="carniceria_proveedores_view_tree" model="ir.ui.view">
+            <field name="name">Proveedores</field>
+            <field name="model">carniceria.proveedores</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codProv" />
+                    <field name="nomProv" />
+                    <field name="telefono" />
+		    <field name="direccion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="carniceria_proveedores_view_form" model="ir.ui.view">
+            <field name="name">Formulario de Proveedores</field>
+            <field name="model">carniceria.proveedores</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+		        <field name="codProv" />
+		        <field name="nomProv" />
+		        <field name="telefono" />
+			<field name="direccion"/>
+                   </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="carniceria_proveedores_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de Proveedores</field>
+            <field name="model">carniceria.proveedores</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codProv" />
+                    <field name="nomProv" />
+                    <field name="telefono" />
+		    <field name="direccion"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

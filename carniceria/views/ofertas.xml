@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="carniceria_ofertas_action" name="ofertas"
+                     res_model="carniceria.ofertas" />
+        <menuitem id="carniceria_ofertas_menu"
+                  name="Ofertas"
+                  action="carniceria_ofertas_action"
+                  parent="menu_inicio"
+                  sequence="20" />
+
+        <record id="carniceria_ofertas_view_tree" model="ir.ui.view">
+            <field name="name">Ofertas</field>
+            <field name="model">carniceria.ofertas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codOferta" />
+		    <field name="carne"/>
+                    <field name="newPrecio" />
+		    <field name="descrip"/>
+		    <field name="activo"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="carniceria_ofertas_view_form" model="ir.ui.view">
+            <field name="name">Formulario de Ofertas</field>
+            <field name="model">carniceria.ofertas</field>
+            <field name="arch" type="xml">
+                <form>
+			<header>
+                        <button name="limpiar" type="object" string="Desactivar oferta" class="oe_highlight" />
+                        <!--button name="limpia_todo" type="object" string="Limpia todo" class="oe_highlight" /-->
+
+
+			</header>
+                    <group>
+                    <field name="codOferta" />
+		    <field name="carne"/>
+                    <field name="newPrecio" />
+		    <field name="descrip"/>
+		    <field name="activo"/>
+                   	</group>
+                </form>
+            </field>
+        </record>
+
+        <record id="carniceria_ofertas_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de Ofertas</field>
+            <field name="model">carniceria.ofertas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codOferta" />
+		    <field name="carne"/>
+                    <field name="newPrecio" />
+		    <field name="descrip"/>
+		    <field name="activo"/>
+
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
